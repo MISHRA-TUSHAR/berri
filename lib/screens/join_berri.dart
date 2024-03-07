@@ -51,7 +51,7 @@ class _JoinState extends State<Join> {
                     ),
                   ),
                   Text(
-                    'COMMUNITY.',
+                    'community.',
                     style: TextStyle(
                       color: MyAppColors.textBlue,
                       fontSize: 36,

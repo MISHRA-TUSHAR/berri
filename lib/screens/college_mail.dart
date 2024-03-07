@@ -1,10 +1,11 @@
+import 'package:berri/screens/otp_screen.dart';
 import 'package:berri/utils/colors.dart';
 import 'package:berri/widgets/buttons.dart';
 import 'package:berri/widgets/textfields.dart';
 import 'package:flutter/material.dart';
 
 class CollegeMail extends StatefulWidget {
-  const CollegeMail({Key? key});
+  const CollegeMail({super.key});
 
   @override
   State<CollegeMail> createState() => _CollegeMailState();
@@ -38,6 +39,18 @@ class _CollegeMailState extends State<CollegeMail> {
         buttonColor = MyAppColors.unFocused;
       }
     });
+  }
+
+  void navigateToOTP() {
+    if (collegeNameController.text.isNotEmpty &&
+        emailController.text.isNotEmpty) {
+      Navigator.push(
+        context,
+        MaterialPageRoute(
+          builder: (context) => OTPscreen(),
+        ),
+      );
+    }
   }
 
   @override
@@ -91,7 +104,7 @@ class _CollegeMailState extends State<CollegeMail> {
                         ),
                       ),
                       TextSpan(
-                        text: 'COLLEGE\n',
+                        text: 'college\n',
                         style: TextStyle(
                           color: MyAppColors.textBlue,
                           fontSize: 36,
@@ -156,12 +169,15 @@ class _CollegeMailState extends State<CollegeMail> {
               const SizedBox(height: 20),
               Padding(
                 padding: const EdgeInsets.only(left: 10, right: 10, bottom: 30),
-                child: Buttons(
-                  backgroundColor: buttonColor,
-                  text: 'GET OTP',
-                  textColor: Colors.black54,
-                  isBold: true,
-                  hasBorder: false,
+                child: InkWell(
+                  onTap: navigateToOTP,
+                  child: Buttons(
+                    backgroundColor: buttonColor,
+                    text: 'GET OTP',
+                    textColor: Colors.black54,
+                    isBold: true,
+                    hasBorder: false,
+                  ),
                 ),
               ),
             ],
