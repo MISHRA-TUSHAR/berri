@@ -47,7 +47,9 @@ class _CollegeMailState extends State<CollegeMail> {
       Navigator.push(
         context,
         MaterialPageRoute(
-          builder: (context) => OTPscreen(),
+          builder: (context) => OTPscreen(
+            email: emailController.text,
+          ),
         ),
       );
     }

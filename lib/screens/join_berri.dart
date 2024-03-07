@@ -4,7 +4,7 @@ import 'package:berri/widgets/buttons.dart';
 import 'package:flutter/material.dart';
 
 class Join extends StatefulWidget {
-  const Join({Key? key}) : super(key: key);
+  const Join({super.key});
 
   @override
   State<Join> createState() => _JoinState();
